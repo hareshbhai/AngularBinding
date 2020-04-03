@@ -2,21 +2,15 @@
 
 <input 
     type = "text"
-    #inputUserName 
     class = "form-control"
     (input) = "onUpdateSetUserName($event)"
+    [(ngModel)]="userName"
     >
 
 
 <button 
     class = "btn btn-primary"
-    [disabled]="disabledAddButton"
-    (click) = "onUpdateSetUserName(inputUserName.value)"
-> Add Name </button>
-
-<button 
-    class = "btn btn-primary"
-    (click) = "onResetUserName()"
-> Reset Name </button>
-
-    <p> Username is : {{ userName }} </p>
+    [disabled]="userName===''"
+    (click) = "userName=''"
+> Reset User </button>
+<p> Username is : {{ userName }} </p>
